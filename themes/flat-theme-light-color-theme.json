@@ -155,7 +155,7 @@
               "markup.fenced_code punctuation.definition"
           ],
           "settings": {
-              "foreground": "#6272A4"
+              "foreground": "#9DA5A6"
           }
       },
       {
@@ -169,7 +169,7 @@
               "markup.fenced_code.block"
           ],
           "settings": {
-              "foreground": "#6272A4"
+              "foreground": "#9DA5A6"
           }
       },
       {
@@ -208,7 +208,7 @@
               "markup.other.anchor string"
           ],
           "settings": {
-              "foreground": "#F8F8F2"
+              "foreground": "#2E2E2E"
           }
       },
       {
@@ -218,7 +218,7 @@
               "source.json meta.structure.dictionary.json support.type.property-name.json"
           ],
           "settings": {
-              "foreground": "#8BE9FD"
+              "foreground": "#3B8EEA"
           }
       },
       {
@@ -278,7 +278,7 @@
               "keyword.control.def.ruby"
           ],
           "settings": {
-              "foreground": "#FF79C6"
+              "foreground": "#F08C6A"
           }
       },
       {
@@ -337,7 +337,7 @@
               "markup.code"
           ],
           "settings": {
-              "foreground": "#F1FBFD"
+              "foreground": "#3B8EEA"
           }
       },
       {
@@ -369,7 +369,7 @@
               "punctuation.definition.group.regexp"
           ],
           "settings": {
-              "foreground": "#FFB86C"
+              "foreground": "#E6B673"
           }
       },
       {
@@ -381,7 +381,7 @@
               "keyword.operator.negation.regexp"
           ],
           "settings": {
-              "foreground": "#FF5555"
+              "foreground": "#E06C75"
           }
       },
       {
@@ -390,7 +390,7 @@
               "punctuation.definition.character-class.regexp"
           ],
           "settings": {
-              "foreground": "#8BE9FD"
+              "foreground": "#3B8EEA"
           }
       },
       {
@@ -399,7 +399,7 @@
               "meta.assertion.look-ahead.regexp"
           ],
           "settings": {
-              "foreground": "#50FA7B"
+              "foreground": "#2ECC76"
           }
       },
       {
@@ -408,7 +408,7 @@
               "meta.item-access constant.numeric"
           ],
           "settings":{
-              "foreground": "#FF0080"
+              "foreground": "#8E6BC7"
           }
       },
       {
@@ -479,7 +479,7 @@
               "support.other.escape.special"
           ],
           "settings": {
-              "foreground": "#8BE9FD"
+              "foreground": "#2AA198"
           }
       },
       {
@@ -521,7 +521,7 @@
               "source.shell variable.other"
           ],
           "settings": {
-              "foreground": "#BD93F9"
+              "foreground": "#C792EA"
           }
       },
       {
@@ -532,7 +532,7 @@
               "constant.regexp"
           ],
           "settings": {
-              "foreground": "#FF79C6"
+              "foreground": "#E06C75"
           }
       },
       {
@@ -592,7 +592,7 @@
               "markup.block entity.name.tag"
           ],
           "settings": {
-              "foreground": "#FF0080"
+              "foreground": "#E06C75"
           }
       },
       {
@@ -615,7 +615,7 @@
               "punctuation.definition.attribute-selector.begin.bracket.square.scss"
           ],
           "settings": {
-              "foreground": "#F1FA8C"
+              "foreground": "#2ECC76"
           }
       },
       {
@@ -635,7 +635,7 @@
               "text.tex markup.raw"
           ],
           "settings": {
-              "foreground": "#F1FA8C"
+              "foreground": "#2ECC76"
           }
       },
       {
@@ -655,7 +655,7 @@
               "source.toml constant"
           ],
           "settings": {
-              "foreground": "#BD93F9"
+              "foreground": "#D19A66"
           }
       },
       {
@@ -683,7 +683,7 @@
               "entity.name.function.decorator"
           ],
           "settings": {
-              "foreground": "#50FA7B"
+              "foreground": "#2B90D9"
           }
       },
       {
@@ -722,7 +722,7 @@
               "punctuation.definition.arguments.end.python"
           ],
           "settings": {
-              "foreground": "#BD93F9"
+              "foreground": "#6C8EF5"
           }
       },
       {
@@ -771,7 +771,7 @@
               "markup.substitution"
           ],
           "settings": {
-              "foreground": "#8BE9FD"
+              "foreground": "#4A4A4A"
           }
       },
       {
@@ -781,8 +781,8 @@
               "invalid.illegal"
           ],
           "settings": {
-              "foreground": "#FF5555",
-              "fontStyle": "underline italic"
+              "foreground": "#E53935",
+              "fontStyle": "underline"
           }
       },
       {
@@ -791,8 +791,8 @@
               "invalid.deprecated"
           ],
           "settings": {
-              "foreground": "#F8F8F2",
-              "fontStyle": "underline italic"
+              "foreground": "#2E2E2E",
+              "fontStyle": "underline"
           }
       },
       {
