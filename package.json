@@ -2,7 +2,7 @@
   "name": "flat-theme",
   "displayName": "Flat-Theme",
   "publisher": "Aatricks",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.60.0"
   },
@@ -27,7 +27,9 @@
     "type": "git",
     "url": "https://github.com/Aatricks/flat-theme"
   },
-  "bugs": {"url": "https://github.com/Aatricks/flat-theme/issues"},
+  "bugs": {
+    "url": "https://github.com/Aatricks/flat-theme/issues"
+  },
   "homepage": "https://github.com/Aatricks/flat-theme#readme",
   "icon": "assets/icon.png"
 }
