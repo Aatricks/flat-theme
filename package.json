@@ -1,0 +1,33 @@
+{
+  "name": "flat-theme",
+  "displayName": "Flat-Theme",
+  "publisher": "Aatricks",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Flat-Theme (Dark)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/flat-theme-gray-color-theme.json"
+      },
+      {
+        "label": "Flat-Theme (Light)",
+        "uiTheme": "vs",
+        "path": "./themes/flat-theme-light-color-theme.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aatricks/flat-theme"
+  },
+  "bugs": {"url": "https://github.com/Aatricks/flat-theme/issues"},
+  "homepage": "https://github.com/Aatricks/flat-theme#readme",
+  "icon": "assets/icon.png"
+}
