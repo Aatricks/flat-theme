@@ -5,7 +5,9 @@ Flat-Theme is a minimal, flat color theme for Visual Studio Code that ships both
 This extension provides two themes located in the `themes/` folder:
 
 - `flat-theme-gray-color-theme.json` — Flat-Theme (Dark)
+[![Flat-Theme Dark](./assets/flat-dark.png)](./themes/flat-theme-gray-color-theme.json)
 - `flat-theme-light-color-theme.json` — Flat-Theme (Light)
+[![Flat-Theme Light](./assets/flat-light.png)](./themes/flat-theme-light-color-theme.json)
 
 ## Features
 
