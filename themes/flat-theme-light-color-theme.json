@@ -79,6 +79,8 @@
   "list.hoverForeground": "#37474F",
     "statusBar.background": "#F5F5F5",
     "statusBar.foreground": "#37474F",
+    "statusBar.noFolderBackground": "#F5F5F5",
+    "statusBar.noFolderForeground": "#37474F",
     "titleBar.activeBackground": "#F5F5F5",
     "titleBar.activeForeground": "#37474F",
     "button.background": "#80CBC4",
@@ -978,7 +980,7 @@
               "string.quoted.multi"
           ],
           "settings": {
-              "fontStyle": "italic"
+              "fontStyle": ""
           }
       },
       {

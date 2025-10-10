@@ -30,6 +30,8 @@
   "list.hoverForeground": "#CFD8DC",
   "statusBar.background": "#202124",
     "statusBar.foreground": "#CFD8DC",
+    "statusBar.noFolderBackground": "#202124",
+    "statusBar.noFolderForeground": "#CFD8DC",
   "titleBar.activeBackground": "#202124",
     "titleBar.activeForeground": "#CFD8DC",
     "button.background": "#94E2D5",
