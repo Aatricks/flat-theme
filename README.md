@@ -1,61 +1,24 @@
 # Flat-Theme
 
-Flat-Theme is a minimal, flat color theme for Visual Studio Code that ships both a dark (`Flat-Theme (Dark)`) and a light (`Flat-Theme (Light)`) variant.
+Flat-Theme is a minimal Visual Studio Code theme collection generated from a standalone source palette in this repository.
 
-This extension provides two themes located in the `themes/` folder:
+## Variants
 
-- `flat-theme-gray-color-theme.json` — Flat-Theme (Dark)
-[![Flat-Theme Dark](./assets/flat-dark.png)](./themes/flat-theme-gray-color-theme.json)
-- `flat-theme-light-color-theme.json` — Flat-Theme (Light)
-[![Flat-Theme Light](./assets/flat-light.png)](./themes/flat-theme-light-color-theme.json)
-
-## Features
-
-- Low-contrast, flat colors designed for focus and readability
-- Carefully chosen syntax colors for clarity across multiple languages
-- Both dark and light variants so you can switch depending on ambient lighting
-
-## Installation
-
-There are a few ways to install this theme:
-
-1. Install from the VS Code Marketplace (if published).
-2. Install from the VSIX file (build locally then install).
-3. Use the repository locally for development and move it into `~/.vscode/extensions`.
-
-## Usage
-
-After installation or when running the extension host:
-
-1. Open the Command Palette (Ctrl+Shift+P / Cmd+Shift+P).
-2. Type `Preferences: Color Theme` and select `Flat-Theme (Dark)` or `Flat-Theme (Light)`.
+- `Flat-Theme (Dark)` (dark)
+  Uses background `#202124` with accent `#94E2D5` while keeping the flat, low-border UI structure.
+- `Flat-Theme (Light)` (light)
+  Uses background `#FAFBFC` with accent `#80CBC4` while keeping the flat, low-border UI structure.
+- `Flat-Theme (Frappé)` (dark)
+  Uses background `#303446` with accent `#ca9ee6` while keeping the flat, low-border UI structure.
 
 ## Development
 
-If you want to modify the theme or add variants:
+- Edit `themes/source-theme.json` to change palettes or variant definitions.
+- Rebuild generated files with `python3 scripts/build_themes.py`.
+- Verify generated files are current with `python3 scripts/build_themes.py --check`.
 
-1. Edit the JSON color files in the `themes/` folder.
-2. Run `npm install` (if there are dev dependencies) and `npm run` scripts if present.
-3. Use the VS Code Extension Development Host (F5) to preview changes.
-
-Tip: Use the `Developer: Inspect Editor Tokens and Scopes` command in the Command Palette to verify which token scopes your colors apply to.
-
-## Contributing
-
-Contributions are welcome. A suggested workflow:
-
-1. Fork the repository
-2. Create a branch for your change
-3. Update or add a theme file in `themes/`
-4. Open a pull request with a description of your changes
-
-Please keep changes small and focused when possible and include screenshots for visual changes.
+The files in `themes/`, `package.json`, and this README are generated outputs and should not be hand-maintained.
 
 ## License
 
-This project is published under MIT License. See the [LICENSE](./LICENSE) file for details.
-
-## Credits
-
-Created Aatricks. Thanks to the VS Code theming community for examples and guidance.
-
+MIT License. See [LICENSE](./LICENSE) for details.

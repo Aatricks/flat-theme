@@ -14,12 +14,17 @@
       {
         "label": "Flat-Theme (Dark)",
         "uiTheme": "vs-dark",
-        "path": "./themes/flat-theme-gray-color-theme.json"
+        "path": "./themes/flat-gray-color-theme.json"
       },
       {
         "label": "Flat-Theme (Light)",
         "uiTheme": "vs",
-        "path": "./themes/flat-theme-light-color-theme.json"
+        "path": "./themes/flat-light-color-theme.json"
+      },
+      {
+        "label": "Flat-Theme (Frapp\u00e9)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/flat-frappe-color-theme.json"
       }
     ]
   },
