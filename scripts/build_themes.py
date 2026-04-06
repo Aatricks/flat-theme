@@ -75,16 +75,15 @@ def token_colors(variant: dict[str, object]) -> list[dict[str, object]]:
                 "variable.language.self",
                 "variable.language.super",
             ],
-            "settings": token(palette["builtin"], "italic"),
+            "settings": token(palette["builtin"]),
         },
         {
             "name": "SPECIAL VARIABLE",
             "scope": [
-                "variable.other.constant",
                 "variable.other.readwrite.instance",
                 "variable.other.enummember",
             ],
-            "settings": token(palette["special_variable"], "italic"),
+            "settings": token(palette["special_variable"]),
         },
         {
             "name": "VARIABLE PARAMETER",
@@ -126,10 +125,13 @@ def token_colors(variant: dict[str, object]) -> list[dict[str, object]]:
             "scope": [
                 "string.regexp",
                 "constant.character.escape",
-                "string.template",
-                "punctuation.definition.template-expression",
             ],
             "settings": token(palette["regexp"]),
+        },
+        {
+            "name": "TEMPLATE INTERPOLATION",
+            "scope": ["punctuation.definition.template-expression"],
+            "settings": token(palette["keyword"]),
         },
         {
             "name": "MODULE",
@@ -139,7 +141,7 @@ def token_colors(variant: dict[str, object]) -> list[dict[str, object]]:
                 "entity.name.package",
                 "support.module",
             ],
-            "settings": token(palette["module"], "italic"),
+            "settings": token(palette["module"]),
         },
         {
             "name": "TYPE",
@@ -159,7 +161,15 @@ def token_colors(variant: dict[str, object]) -> list[dict[str, object]]:
                 "storage.type.builtin",
                 "storage.type.primitive",
             ],
-            "settings": token(palette["type"], "italic"),
+            "settings": token(palette["type"]),
+        },
+        {
+            "name": "MACRO",
+            "scope": [
+                "entity.name.function.macro",
+                "support.function.macro",
+            ],
+            "settings": token(palette["macro"]),
         },
         {
             "name": "FUNCTION",
@@ -174,8 +184,6 @@ def token_colors(variant: dict[str, object]) -> list[dict[str, object]]:
         {
             "name": "ATTRIBUTE/DECORATOR",
             "scope": [
-                "entity.name.function.macro",
-                "support.function.macro",
                 "entity.other.attribute-name",
                 "entity.other.attribute-name.html",
                 "meta.annotation",
@@ -190,7 +198,6 @@ def token_colors(variant: dict[str, object]) -> list[dict[str, object]]:
                 "keyword",
                 "keyword.control",
                 "keyword.operator.new",
-                "keyword.operator.expression",
                 "storage.modifier",
                 "storage.type.function",
             ],
@@ -257,12 +264,12 @@ def token_colors(variant: dict[str, object]) -> list[dict[str, object]]:
         {
             "name": "DIFF DELETED",
             "scope": ["markup.deleted", "markup.deleted.diff"],
-            "settings": token(palette["parameter"]),
+            "settings": token(palette["attribute"]),
         },
         {
             "name": "INVALID",
             "scope": ["invalid", "invalid.illegal"],
-            "settings": token(palette["parameter"], bold=True),
+            "settings": token(palette["attribute"], bold=True),
         },
     ]
 
@@ -277,10 +284,10 @@ def semantic_token_colors(variant: dict[str, object]) -> dict[str, object]:
         "enumMember": palette["constant"],
         "function": palette["function"],
         "method": palette["function"],
-        "macro": palette["attribute"],
+        "macro": palette["macro"],
         "type": palette["type"],
         "class": palette["type"],
-        "interface": {"foreground": palette["type"], "italic": True},
+        "interface": palette["type"],
         "enum": palette["type"],
         "typeParameter": palette["type"],
         "namespace": palette["module"],
@@ -291,13 +298,14 @@ def semantic_token_colors(variant: dict[str, object]) -> dict[str, object]:
         "number": palette["constant"],
         "regexp": palette["regexp"],
         "operator": palette["operator"],
-        "builtinVariable": {"foreground": palette["builtin"], "italic": True},
+        "builtinVariable": palette["builtin"],
     }
 
 
 def workbench_colors(variant: dict[str, object]) -> dict[str, str]:
     ui = variant["ui"]
     palette = variant["syntax_palette"]
+    status = variant["status"]
     accent = ui["accent"]
     background = ui["background"]
     chrome = ui["chrome"]
@@ -395,9 +403,9 @@ def workbench_colors(variant: dict[str, object]) -> dict[str, str]:
         "editorSuggestWidget.selectedBackground": element,
         "editorHoverWidget.background": elevated,
         "editorHoverWidget.border": accent,
-        "editorInfo.foreground": palette["member"],
-        "editorWarning.foreground": palette["type"],
-        "editorError.foreground": palette["parameter"],
+        "editorInfo.foreground": status["info"],
+        "editorWarning.foreground": status["warning"],
+        "editorError.foreground": status["error"],
         "input.background": editor,
         "input.foreground": text,
         "input.border": background,
@@ -450,11 +458,11 @@ def workbench_colors(variant: dict[str, object]) -> dict[str, str]:
         "terminal.ansiBrightMagenta": variant["terminal"]["magenta"],
         "terminal.ansiBrightCyan": variant["terminal"]["cyan"],
         "terminal.ansiBrightWhite": variant["terminal"]["bright_white"],
-        "gitDecoration.addedResourceForeground": palette["string"],
-        "gitDecoration.modifiedResourceForeground": palette["type"],
-        "gitDecoration.deletedResourceForeground": palette["parameter"],
-        "gitDecoration.untrackedResourceForeground": palette["string"],
-        "gitDecoration.conflictingResourceForeground": palette["type"],
+        "gitDecoration.addedResourceForeground": status["success"],
+        "gitDecoration.modifiedResourceForeground": status["warning"],
+        "gitDecoration.deletedResourceForeground": status["error"],
+        "gitDecoration.untrackedResourceForeground": status["success"],
+        "gitDecoration.conflictingResourceForeground": status["warning"],
         "gitDecoration.ignoredResourceForeground": muted,
         "settings.headerForeground": text,
         "settings.headerBorder": background,
@@ -496,7 +504,7 @@ def render_package(source: dict[str, object]) -> str:
         "name": "flat-theme",
         "displayName": "Flat-Theme",
         "publisher": "Aatricks",
-        "version": "0.1.2",
+        "version": "0.1.3",
         "engines": {"vscode": "^1.60.0"},
         "categories": ["Themes"],
         "contributes": {
@@ -575,6 +583,7 @@ def contrast(color_a: str, color_b: str) -> float:
 
 def validate_theme(variant: dict[str, object], theme: dict[str, object]) -> list[str]:
     colors = theme["colors"]
+    palette = variant["syntax_palette"]
     editor_background = colors["editor.background"]
     terminal_background = colors["terminal.background"]
     errors = []
@@ -584,6 +593,27 @@ def validate_theme(variant: dict[str, object], theme: dict[str, object]) -> list
         ("terminal.foreground", colors["terminal.foreground"], terminal_background, 4.5),
     ]
     for name, foreground, background, minimum in checks:
+        value = contrast(foreground, background)
+        if value < minimum:
+            errors.append(
+                f"{variant['name']}: {name} contrast {value:.2f} is below {minimum:.1f}"
+            )
+    syntax_checks = [
+        ("syntax.keyword", palette["keyword"], editor_background, 4.5),
+        ("syntax.function", palette["function"], editor_background, 4.5),
+        ("syntax.member", palette["member"], editor_background, 4.5),
+        ("syntax.type", palette["type"], editor_background, 4.5),
+        ("syntax.constant", palette["constant"], editor_background, 4.5),
+        ("syntax.string", palette["string"], editor_background, 4.5),
+        ("syntax.regexp", palette["regexp"], editor_background, 4.5),
+        ("syntax.module", palette["module"], editor_background, 4.5),
+        ("syntax.builtin", palette["builtin"], editor_background, 4.5),
+        ("syntax.parameter", palette["parameter"], editor_background, 4.5),
+        ("syntax.attribute", palette["attribute"], editor_background, 4.5),
+        ("syntax.comment", palette["comment"], editor_background, 4.5),
+        ("syntax.punctuation", palette["punctuation"], editor_background, 4.0),
+    ]
+    for name, foreground, background, minimum in syntax_checks:
         value = contrast(foreground, background)
         if value < minimum:
             errors.append(
